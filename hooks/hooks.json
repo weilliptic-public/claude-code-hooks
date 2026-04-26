@@ -16,7 +16,7 @@
                 "hooks": [
                     {
                         "type": "command",
-                        "command": "${CLAUDE_PLUGIN_ROOT}/bin/session-start-hook"
+                        "command": "${CLAUDE_PLUGIN_ROOT}/bin/session-start-hook $WEILLIPTIC_ACCOUNT_FILE"
                     }
                 ]
             }
