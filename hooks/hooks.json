@@ -6,7 +6,7 @@
                 "hooks": [
                     {
                         "type": "command",
-                        "command": "${CLAUDE_PLUGIN_ROOT}/bin/audit-hook $WEILLIPTIC_PRIVATE_KEY"
+                        "command": "${CLAUDE_PLUGIN_ROOT}/bin/audit-hook $WEILLIPTIC_ACCOUNT_FILE"
                     }
                 ]
             }
@@ -26,7 +26,7 @@
                 "hooks": [
                     {
                         "type": "command",
-                        "command": "${CLAUDE_PLUGIN_ROOT}/bin/session-end-hook $WEILLIPTIC_PRIVATE_KEY"
+                        "command": "${CLAUDE_PLUGIN_ROOT}/bin/session-end-hook $WEILLIPTIC_ACCOUNT_FILE"
                     }
                 ]
             }

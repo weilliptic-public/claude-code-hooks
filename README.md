@@ -7,10 +7,10 @@ Claude Code plugin that audits AI-assisted code changes on Weilchain. Automatica
 ### Prerequisites
 
 - [Claude Code](https://claude.ai/code) installed
-- A Weilliptic private key (set as `WEILLIPTIC_PRIVATE_KEY` environment variable)
+- A Weilliptic account file (set as `WEILLIPTIC_ACCOUNT_FILE` environment variable)
 
 ```bash
-export WEILLIPTIC_PRIVATE_KEY="<your-private-key>"
+export WEILLIPTIC_ACCOUNT_FILE="/path/to/your/account.json"
 ```
 
 ### Install
