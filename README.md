@@ -29,9 +29,10 @@ claude --plugin-dir /path/to/claude-code-hooks
 
 | Hook | Trigger | Purpose |
 |---|---|---|
-| `audit-hook` | Every Write/Edit/Bash tool use | Records each file edit as a blockchain receipt |
-| `session-start-hook` | Session start | Initializes session tracking |
-| `session-end-hook` | Session end | Persists session receipts to Weilchain |
+| `pretooluse-hook` | Every Write/Edit/Update/MultiEdit/Bash tool use (pre) | Checks token balance / audit quota before allowing tool execution |
+| `audit-hook` | Every Write/Edit/Update/MultiEdit/Bash tool use (post) | Records each file edit as a blockchain receipt and debits tokens |
+| `session-start-hook` | Session start | Initializes wallet client and installs git hooks |
+| `session-end-hook` | Session end | Session cleanup |
 | `git-commit-hook` | Git post-commit | Persists receipt ledger on commit |
 
 ## Commands

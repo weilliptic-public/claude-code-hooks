@@ -1,12 +1,23 @@
 {
     "hooks": {
-        "PostToolUse": [
+        "PreToolUse": [
             {
-                "matcher": "Write|Edit|MultiEdit|Bash",
+                "matcher": "Write|Edit|Update|MultiEdit|Bash",
                 "hooks": [
                     {
                         "type": "command",
-                        "command": "${CLAUDE_PLUGIN_ROOT}/bin/audit-hook $WEILLIPTIC_ACCOUNT_FILE"
+                        "command": "${CLAUDE_PLUGIN_ROOT}/bin/pretooluse-hook $WEILLIPTIC_ACCOUNT_FILE"
+                    }
+                ]
+            }
+        ],
+        "PostToolUse": [
+            {
+                "matcher": "Write|Edit|Update|MultiEdit|Bash",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/bin/audit-hook $WEILLIPTIC_ACCOUNT_FILE 2>>/tmp/audit-hook.log"
                     }
                 ]
             }
@@ -16,7 +27,7 @@
                 "hooks": [
                     {
                         "type": "command",
-                        "command": "${CLAUDE_PLUGIN_ROOT}/bin/session-start-hook $WEILLIPTIC_ACCOUNT_FILE"
+                        "command": "${CLAUDE_PLUGIN_ROOT}/bin/session-start-hook $WEILLIPTIC_ACCOUNT_FILE ${CLAUDE_PLUGIN_ROOT}/bin/git-commit-hook"
                     }
                 ]
             }
