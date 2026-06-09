@@ -2,7 +2,7 @@
     "hooks": {
         "PreToolUse": [
             {
-                "matcher": "Write|Edit|Update|MultiEdit|Bash",
+                "matcher": "Write|Edit|Update|MultiEdit|Bash|mcp__.*",
                 "hooks": [
                     {
                         "type": "command",
@@ -13,7 +13,7 @@
         ],
         "PostToolUse": [
             {
-                "matcher": "Write|Edit|Update|MultiEdit|Bash",
+                "matcher": "Write|Edit|Update|MultiEdit|Bash|mcp__.*",
                 "hooks": [
                     {
                         "type": "command",
@@ -38,6 +38,26 @@
                     {
                         "type": "command",
                         "command": "${CLAUDE_PLUGIN_ROOT}/bin/session-end-hook $WEILLIPTIC_ACCOUNT_FILE"
+                    }
+                ]
+            }
+        ],
+        "UserPromptSubmit": [
+            {
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/bin/user-prompt-submit-hook"
+                    }
+                ]
+            }
+        ],
+        "Stop": [
+            {
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "${CLAUDE_PLUGIN_ROOT}/bin/stop-hook $WEILLIPTIC_ACCOUNT_FILE 2>>/tmp/stop-hook.log"
                     }
                 ]
             }
